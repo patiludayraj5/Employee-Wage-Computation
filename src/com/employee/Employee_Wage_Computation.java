@@ -1,4 +1,5 @@
 package com.employee;
+import java.util.ArrayList;
 import java.util.Random;
 interface IEmployeeWageComputation
 {
@@ -46,21 +47,18 @@ public class Employee_Wage_Computation implements IEmployeeWageComputation{
 
     static final int full_time = 1;
     static final int part_time = 2;
-    int noOfCompanies, index;
-    CompanyEmpWage[] companies;
+    ArrayList<CompanyEmpWage> companies;
     // instance constants
 
     public Employee_Wage_Computation(int noOfCompanies)
     {
-        this.noOfCompanies = noOfCompanies;
-        companies = new CompanyEmpWage[noOfCompanies];
-        index = 0;
+        companies = new ArrayList<>();
     }
 
     public void addCompany(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs)
     {
-        companies[index++] = new CompanyEmpWage(companyName, wagePerHr, maxWorkingDays, maxWorkingHrs);
-    }
+        CompanyEmpWage company = new CompanyEmpWage(companyName, wagePerHr, maxWorkingDays, maxWorkingHrs);
+        companies.add(company);    }
 
     int generateEmployeeType() {
         return random.nextInt(3);
