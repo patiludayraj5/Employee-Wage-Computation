@@ -2,8 +2,7 @@ import java.util.Random;
 
 public class Employee_Wage_Computation
 {
-    public static void main(String []args)
-    {
+    public static void calculateTotalWage(){
         final int full_time = 1;
         final int part_time=2;
         int wage_per_hour=20;
@@ -21,14 +20,14 @@ public class Employee_Wage_Computation
             int employee = random.nextInt(3);
             switch (employee) {
                 case full_time, part_time -> {
-                  //  System.out.println("Employee is Present Full Time");
+                    //  System.out.println("Employee is Present Full Time");
                     working_Hour = 8;
                     total_wage++;
                 }
                 // System.out.println("Employee is present Part Time");
                 default -> {
                     working_Hour = 0;
-                  //  System.out.println("Employee is Absent");
+                    //  System.out.println("Employee is Absent");
                     absent++;
                 }
             }
@@ -38,6 +37,10 @@ public class Employee_Wage_Computation
         }
         System.out.println();
         System.out.println("Total wage for a month is " + total_wage);
+    }
+    public static void main(String []args)
+    {
+       calculateTotalWage();
        // System.out.println("Employee is absent for "+absent+" Days");
         //System.out.println("Total month wage is : "+total_wage*wage);
     }
