@@ -1,4 +1,4 @@
-package com.employee;
+
 import java.util.ArrayList;
 import java.util.Random;
 interface IEmployeeWageComputation
