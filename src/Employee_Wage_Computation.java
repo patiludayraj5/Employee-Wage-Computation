@@ -1,4 +1,3 @@
-package com.employee;
 import java.util.Random;
 
 public class Employee_Wage_Computation
